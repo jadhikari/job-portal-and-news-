@@ -1,6 +1,3 @@
-Below is a concise `README.md` for your project:
-
----
 
 ```markdown
 # News & Job Portal, User Management and Core App
