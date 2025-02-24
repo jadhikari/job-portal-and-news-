@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Home | Work News Platform{% endblock %}
+
+{% block extra_css %}
+  <!-- Core CSS for the home page -->
+  <link rel="stylesheet" href="{% static 'core/core.css' %}">
+{% endblock %}
+
+{% block content %}
+  <!-- Hero Section with CSS-only Multi-Image Slider -->
+  <header class="hero" id="home">
+    <!-- Slides -->
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <!-- Content Overlay -->
+    <div class="hero-content">
+      <h1>Work News Platform</h1>
+      <p>Your daily source for professional updates</p>
+    </div>
+  </header>
+
+  <!-- Features Section -->
+  <section class="container feature-section">
+    <div class="row">
+      <div class="col-md-4 feature-box">
+        <img src="https://source.unsplash.com/100x100/?newspaper" alt="News">
+        <h4>Featured News</h4>
+        <p>Latest industry updates in real-time.</p>
+      </div>
+      <div class="col-md-4 feature-box">
+        <img src="https://source.unsplash.com/100x100/?youtube" alt="Videos">
+        <h4>YouTube Integration</h4>
+        <p>Watch expert insights directly on our platform.</p>
+      </div>
+      <div class="col-md-4 feature-box">
+        <img src="https://source.unsplash.com/100x100/?reviews" alt="Reviews">
+        <h4>Client Reviews</h4>
+        <p>Read testimonials from industry leaders.</p>
+      </div>
+    </div>
+  </section>
+
+
+
+{% endblock %}
