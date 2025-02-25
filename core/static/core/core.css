@@ -22,22 +22,22 @@
 
 /* Set background images and stagger animation delays for each slide */
 .hero .slide:nth-child(1) {
-    background-image: url('../images/image.jpg');
+    background-image: url('../images/slide/image.jpg');
     animation-delay: 0s;
 }
 
 .hero .slide:nth-child(2) {
-    background-image: url('../images/image1.jpg');
+    background-image: url('../images/slide/image1.jpg');
     animation-delay: 5s;
 }
 
 .hero .slide:nth-child(3) {
-    background-image: url('../images/image2.jpg');
+    background-image: url('../images/slide/image2.jpg');
     animation-delay: 10s;
 }
 
 .hero .slide:nth-child(4) {
-    background-image: url('../images/image3.png');
+    background-image: url('../images/slide/image3.png');
     animation-delay: 15s;
 }
 
@@ -46,8 +46,8 @@
     position: relative;
     z-index: 2;
     text-align: center;
-    color: white;
-    padding-top: 300px; /* Adjust vertical positioning as needed */
+    color: #9db0f1;
+    padding-top: 280px; /* Adjust vertical positioning as needed */
 }
 
 /* Keyframes for fading in and out */
@@ -62,19 +62,41 @@
 /* Other styles for the rest of the page */
 .feature-section {
     background-color: white;
-    padding: 50px 0;
+    /* padding: 50px 0; */
+    margin-top: 20px;
 }
 .feature-box {
     text-align: center;
     padding: 20px;
 }
 .feature-box img {
-    width: 80px;
+    width: 250px;
+    height: 170px;
+    border-radius: 10px;
     margin-bottom: 15px;
 }
-.review-box {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+
+/* Css for job hunting process */
+.process-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+.left-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    transition: opacity 0.3s ease-in-out;
+}
+.step-item {
+    padding: 10px;
+    cursor: pointer;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+}
+.step-item:hover, .step-item.active {
+    border-left-color: #007bff;
+    background-color: #9db0f1;
 }

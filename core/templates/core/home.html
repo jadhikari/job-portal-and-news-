@@ -26,23 +26,78 @@
   <section class="container feature-section">
     <div class="row">
       <div class="col-md-4 feature-box">
-        <img src="https://source.unsplash.com/100x100/?newspaper" alt="News">
+        <img src="../../static/images/news.jpg" alt="News" >
         <h4>Featured News</h4>
         <p>Latest industry updates in real-time.</p>
       </div>
       <div class="col-md-4 feature-box">
-        <img src="https://source.unsplash.com/100x100/?youtube" alt="Videos">
+        <img src="../../static/images/blogs.jpg" alt="Videos" >
         <h4>YouTube Integration</h4>
         <p>Watch expert insights directly on our platform.</p>
       </div>
       <div class="col-md-4 feature-box">
-        <img src="https://source.unsplash.com/100x100/?reviews" alt="Reviews">
-        <h4>Client Reviews</h4>
+        <img src="../../static/images/job.jpg" alt="Reviews" >
+        <h4>Job Lists</h4>
         <p>Read testimonials from industry leaders.</p>
       </div>
     </div>
   </section>
 
 
+  <!-- Job hunting process -->
+  <div class="row process-container">
+    <h2 class="text-center" style="margin-bottom: 20px !important;"><b>🚀 From Job Seeker to Hired: Your Success Path 🚀</b></h2>
+    <!-- Left Side: Image -->
+    <div class="col-md-6 text-center">
+        <img id="processImage" src="{% static 'images/steps/step1.jpg' %}" class="left-image img-fluid rounded shadow">
+    </div>
+
+    <!-- Right Side: Steps List -->
+    <div class="col-md-6">
+        <div class="list-group">
+            <div class="list-group-item step-item active" data-image="{% static 'images/steps/step1.jpg' %}">
+                <h5>Understanding Your Needs</h5>
+                <p>We start by understanding your career goals, preferences, and job expectations.</p>
+            </div>
+            <div class="list-group-item step-item" data-image="{% static 'images/steps/step2.jpg' %}">
+                <h5>Resume & Profile Optimization</h5>
+                <p>We refine your resume and online presence to align with job requirements.</p>
+            </div>
+            <div class="list-group-item step-item" data-image="{% static 'images/steps/step3.jpg' %}">
+                <h5>Job Matching & Application</h5>
+                <p>We find the best job opportunities and assist with applications.</p>
+            </div>
+            <div class="list-group-item step-item" data-image="{% static 'images/steps/step4.jpg' %}">
+                <h5>Interview Preparation</h5>
+                <p>We provide mock interviews, common questions, and company-specific guidance.</p>
+            </div>
+            <div class="list-group-item step-item" data-image="{% static 'images/steps/step5.jpg' %}">
+                <h5>Offer & Negotiation</h5>
+                <p>We guide you in evaluating offers and negotiating salary and benefits.</p>
+            </div>
+            <div class="list-group-item step-item" data-image="{% static 'images/steps/step6.jpg' %}">
+                <h5>Onboarding & Career Growth</h5>
+                <p>We support you even after getting hired to ensure a smooth transition.</p>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const steps = document.querySelectorAll(".step-item");
+        const imageElement = document.getElementById("processImage");
+
+        steps.forEach(step => {
+            step.addEventListener("mouseenter", function () {
+                const newImage = step.getAttribute("data-image");
+                imageElement.src = newImage;
+
+                steps.forEach(s => s.classList.remove("active"));
+                step.classList.add("active");
+            });
+        });
+    });
+  </script>
 
 {% endblock %}
