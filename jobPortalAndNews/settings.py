@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 import os
 from pathlib import Path
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -55,13 +56,15 @@ CKEDITOR_CONFIGS = {
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',  # Required for language storage
+    'django.middleware.locale.LocaleMiddleware',  # Enables language switching
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'jobPortalAndNews.urls'
 
@@ -141,3 +144,22 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #custome setting 
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
+
+
+LANGUAGES = [
+    ('en', _('English')),
+    ('ja', _('Japanese')),
+    ('ne', _('Nepali')),
+]
+
+LANGUAGE_CODE = 'en'  # Default language
+USE_I18N = True
+USE_L10N = True
+
+# Enable session-based language storage
+LANGUAGE_COOKIE_NAME = 'django_language'
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Store session in the database
+
+LOCALE_PATHS = [
+    BASE_DIR / "locale",  # Correctly use Path object for the locale directory
+]

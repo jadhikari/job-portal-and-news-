@@ -2,8 +2,8 @@ from django.contrib import admin
 from .models import News, Blog, Video, Job
 
 class BaseModelAdmin(admin.ModelAdmin):
-    list_display = ('unique_id','header_ja', 'header_eng', 'created_at', 'user')
-    search_fields = ('unique_id', 'header_eng')
+    list_display = ('unique_id','header_ja', 'header_en', 'created_at', 'user')
+    search_fields = ('unique_id', 'header_en')
     readonly_fields = ('unique_id', 'created_at', 'updated_at')
     # Exclude the 'user' field so it's not visible in the form
     exclude = ('user',)

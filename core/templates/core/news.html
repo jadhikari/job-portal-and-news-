@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}News | Work News Platform{% endblock %}
+
+{% block extra_css %}
+  <!-- Core CSS for the home page -->
+  <link rel="stylesheet" href="{% static 'core/core.css' %}">
+{% endblock %}
+
+{% block content %}
+  {% for news in news_items %}
+    <h2>{{ news.header }}</h2>
+    <p>{{ news.content|safe }}</p> <!-- |safe is use to user html code as html -->
+  {% endfor %}
+{% endblock %}
