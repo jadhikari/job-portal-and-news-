@@ -173,3 +173,7 @@ cython_debug/
 .DS_Store
 */.DS_Store
 
+*/migrations/*.py
+!*/migrations/__init__.py
+
+
