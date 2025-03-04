@@ -65,9 +65,11 @@ This Django project serves as a core application for managing news, job postings
    ```
 
 
-```
 
-## Summary
+1. **To compile translation file:**
 
-This project provides a streamlined solution for a news and job portal with built-in user management and rich text editing. Each model automatically gets a unique 6‑character ID and is associated with the logged-in user upon creation, ensuring a robust and user-friendly admin experience.
+   ```bash
+   django-admin compilemessages 
+   ```
+
 ```

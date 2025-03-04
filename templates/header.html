@@ -23,27 +23,27 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {% if request.path == '/about/' %}active{% endif %}" href="#about">
-                        <i class="bi bi-info-circle"></i> About
+                        <i class="bi bi-info-circle"></i> {% trans "About" %}
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {% if request.path == '/news/' %}active{% endif %}" href="{% url 'news' %}">
-                        <i class="bi bi-newspaper"></i> News
+                        <i class="bi bi-newspaper"></i> {% trans "News" %}
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {% if request.path == '/career/' %}active{% endif %}" href="#career">
-                        <i class="bi bi-briefcase"></i> Career
+                        <i class="bi bi-briefcase"></i> {% trans "Career" %}
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {% if request.path == '/member/' %}active{% endif %}" href="#member">
-                        <i class="bi bi-people"></i> Members
+                        <i class="bi bi-people"></i> {% trans "Members" %}
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {% if request.path == '/contact/' %}active{% endif %}" href="#contact">
-                        <i class="bi bi-envelope"></i> Contact
+                        <i class="bi bi-envelope"></i> {% trans "Contact" %}
                     </a>
                 </li>
             </ul>

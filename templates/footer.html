@@ -1,14 +1,21 @@
+{% load i18n %}
+<style>
+    .wide-btn {
+        width: 150px; /* Adjust as needed */
+    }
+</style>
+
 <footer class="bg-dark text-light py-5 mt-5">
   <div class="container">
       <!-- Subscription Section -->
       <div class="row justify-content-center mt-4">
           <div class="col-md-6 text-center">
-              <h5 class="text-uppercase fw-bold">Subscribe for Updates</h5>
-              <p>Get the latest news and job updates directly to your inbox.</p>
-              <form class="d-flex justify-content-center">
-                  <input type="email" class="form-control me-2" placeholder="Enter your email" required>
-                  <button type="submit" class="btn btn-primary">Subscribe</button>
-              </form>
+              <h5 class="text-uppercase fw-bold">{% trans "Subscribe for Updates" %}</h5>
+              <p>{% trans "Get the latest news and job updates directly to your inbox." %}</p>
+            <form class="d-flex justify-content-center">
+                <input type="email" class="form-control me-2" placeholder="{% trans 'Enter your email' %}" required>
+                <button type="submit" class="btn btn-primary wide-btn">{% trans "Subscribe" %}</button>
+            </form>
           </div>
       </div>
 
@@ -18,7 +25,7 @@
               <h5 class="text-uppercase fw-bold">Work News &copy; 2025</h5>
           </div>
           <div class="col-md-3">
-              <h5 class="text-uppercase fw-bold">Business Rssociates</h5>
+              <h5 class="text-uppercase fw-bold">{% trans "Business Associates" %}</h5>
               <ul class="list-unstyled">
                   <li><a href="#" class="text-light text-decoration-none">Rakuten</a></li>
                   <li><a href="#" class="text-light text-decoration-none">Line</a></li>
@@ -26,18 +33,18 @@
               </ul>
           </div>
           <div class="col-md-3">
-              <h5 class="text-uppercase fw-bold">Company</h5>
+              <h5 class="text-uppercase fw-bold">{% trans "Company" %}</h5>
               <ul class="list-unstyled">
-                  <li><a href="#" class="text-light text-decoration-none">About us</a></li>
-                  <li><a href="#" class="text-light text-decoration-none">Careers</a></li>
-                  <li><a href="#" class="text-light text-decoration-none">Contact us</a></li>
+                  <li><a href="#" class="text-light text-decoration-none"> {% trans "About" %}</a></li>
+                  <li><a href="#" class="text-light text-decoration-none">{% trans "Career" %}</a></li>
+                  <li><a href="#" class="text-light text-decoration-none">{% trans "Contact" %}</a></li>
               </ul>
           </div>
           <div class="col-md-3">
-              <h5 class="text-uppercase fw-bold">Further Information</h5>
+              <h5 class="text-uppercase fw-bold">{% trans "Further Information" %}</h5>
               <ul class="list-unstyled">
-                  <li><a href="#" class="text-light text-decoration-none">Terms & Conditions</a></li>
-                  <li><a href="#" class="text-light text-decoration-none">Privacy Policy</a></li>
+                  <li><a href="#" class="text-light text-decoration-none">{% trans "Terms & Conditions" %}</a></li>
+                  <li><a href="#" class="text-light text-decoration-none">{% trans "Privacy Policy" %}</a></li>
               </ul>
           </div>
       </div>
@@ -45,7 +52,7 @@
       <!-- Social Media Links -->
       <div class="row mt-4 text-center">
           <div class="col-12">
-              <h5 class="text-uppercase fw-bold">Follow us</h5>
+              <h5 class="text-uppercase fw-bold">{% trans "Follow us" %}</h5>
               <div class="d-flex justify-content-center gap-3">
                   <a href="#" class="text-light fs-4"><i class="bi bi-facebook"></i></a>
                   <a href="#" class="text-light fs-4"><i class="bi bi-twitter-x"></i></a>

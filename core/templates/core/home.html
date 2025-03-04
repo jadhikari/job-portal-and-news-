@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% load static %}
 {% block title %}Home | Work News Platform{% endblock %}
 
@@ -17,8 +18,8 @@
     <div class="slide"></div>
     <!-- Content Overlay -->
     <div class="hero-content">
-      <h1>Work News Platform</h1>
-      <p>Access daily industry-related news and job openings from various companies, all in one platform.</p>
+      <h1>{% trans "Work News Platform" %}</h1>
+      <p>{% trans "Access daily industry-related news and job openings from various companies, all in one platform." %}</p>
     </div>    
   </header>
 
@@ -27,18 +28,18 @@
     <div class="row">
       <div class="col-md-4 feature-box">
         <img src="../../static/images/news.jpg" alt="News" >
-        <h4>Featured News</h4>
-        <p>Latest industry updates in real-time.</p>
+        <h4>{% trans "Featured News" %}</h4>
+        <p>{% trans "Latest industry updates in real-time." %}</p>
       </div>
       <div class="col-md-4 feature-box">
         <img src="../../static/images/blogs.jpg" alt="Videos" >
-        <h4>Blogs</h4>
-        <p>Watch expert insights directly on our platform.</p>
+        <h4>{% trans "Blogs" %}</h4>
+        <p>{% trans "Watch expert insights directly on our platform." %}</p>
       </div>
       <div class="col-md-4 feature-box">
         <img src="../../static/images/job.jpg" alt="Reviews" >
-        <h4>Job Lists</h4>
-        <p>Read testimonials from industry leaders.</p>
+        <h4>{% trans "Job Lists" %}</h4>
+        <p>{% trans "Read testimonials from industry leaders." %}</p>
       </div>
     </div>
   </section>
@@ -46,7 +47,7 @@
 
   <!-- Job hunting process -->
   <div class="row process-container">
-    <h2 class="text-center" style="margin-bottom: 20px !important;"><b>🚀 From Job Seeker to Hired: Your Success Path 🚀</b></h2>
+    <h2 class="text-center" style="margin-bottom: 20px !important;"><b>{% trans "🚀 From Job Seeker to Hired: Your Success Path 🚀" %}</b></h2>
     <!-- Left Side: Image -->
     <div class="col-md-6 text-center">
         <img id="processImage" src="{% static 'images/steps/step1.jpg' %}" class="left-image img-fluid rounded shadow">
@@ -56,28 +57,28 @@
     <div class="col-md-6">
         <div class="list-group">
             <div class="list-group-item step-item active" data-image="{% static 'images/steps/step1.jpg' %}">
-                <h5>Understanding Your Needs</h5>
-                <p>We start by understanding your career goals, preferences, and job expectations.</p>
+                <h5>{% trans "Understanding Your Needs" %}</h5>
+                <p>{% trans "We start by understanding your career goals, preferences, and job expectations." %}</p>
             </div>
             <div class="list-group-item step-item" data-image="{% static 'images/steps/step2.jpg' %}">
-                <h5>Resume & Profile Optimization</h5>
-                <p>We refine your resume and online presence to align with job requirements.</p>
+                <h5>{% trans "Resume & Profile Optimization" %}</h5>
+                <p>{% trans "We refine your resume and online presence to align with job requirements." %}</p>
             </div>
             <div class="list-group-item step-item" data-image="{% static 'images/steps/step3.jpg' %}">
-                <h5>Job Matching & Application</h5>
-                <p>We find the best job opportunities and assist with applications.</p>
+                <h5>{% trans "Job Matching & Application" %}</h5>
+                <p>{% trans "We find the best job opportunities and assist with applications." %}</p>
             </div>
             <div class="list-group-item step-item" data-image="{% static 'images/steps/step4.jpg' %}">
-                <h5>Interview Preparation</h5>
-                <p>We provide mock interviews, common questions, and company-specific guidance.</p>
+                <h5>{% trans "Interview Preparation" %}</h5>
+                <p>{% trans "We provide mock interviews, common questions, and company-specific guidance." %}</p>
             </div>
             <div class="list-group-item step-item" data-image="{% static 'images/steps/step5.jpg' %}">
-                <h5>Offer & Negotiation</h5>
-                <p>We guide you in evaluating offers and negotiating salary and benefits.</p>
+                <h5>{% trans "Offer & Negotiation" %}</h5>
+                <p>{% trans "We guide you in evaluating offers and negotiating salary and benefits." %}</p>
             </div>
             <div class="list-group-item step-item" data-image="{% static 'images/steps/step6.jpg' %}">
-                <h5>Onboarding & Career Growth</h5>
-                <p>We support you even after getting hired to ensure a smooth transition.</p>
+                <h5>{% trans "Onboarding & Career Growth" %}</h5>
+                <p>{% trans "We support you even after getting hired to ensure a smooth transition." %}</p>
             </div>
         </div>
     </div>

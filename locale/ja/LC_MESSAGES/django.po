@@ -15,7 +15,110 @@ msgid "Home"
 msgstr "ホーム"
 
 msgid "About"
-msgstr "約"
+msgstr "会社概要"
 
 msgid "News"
 msgstr "ニュース"
+
+msgid "Career"
+msgstr "採用情報"
+
+msgid "Members"
+msgstr "メンバー"
+
+msgid "Contact"
+msgstr "お問い合わせ"
+
+msgid "Business Associates"
+msgstr "ビジネスパートナー"
+
+msgid "Company"
+msgstr "会社"
+
+msgid "Further Information"
+msgstr "詳しい情報"
+
+msgid "Terms & Conditions"
+msgstr "利用規約"
+
+msgid "Privacy Policy"
+msgstr "プライバシーポリシー"
+
+msgid "Follow us"
+msgstr "フォローしてください"
+
+msgid "Subscribe for Updates"
+msgstr "最新情報を購読する"
+
+msgid "Get the latest news and job updates directly to your inbox."
+msgstr "最新のニュースや求人情報をあなたの受信箱に直接お届けします。"
+
+msgid "Subscribe"
+msgstr "購読する"
+
+msgid "Enter your email"
+msgstr "メールアドレスを入力してください"
+
+msgid "Work News Platform"
+msgstr "ワークニュースプラットフォーム"
+
+msgid "Access daily industry-related news and job openings from various companies, all in one platform."
+msgstr "さまざまな企業の業界関連ニュースや求人情報を毎日、一つのプラットフォームで確認できます。"
+
+msgid "Featured News"
+msgstr "注目のニュース"
+
+msgid "Latest industry updates in real-time."
+msgstr "最新の業界ニュースをリアルタイムで更新。"
+
+msgid "Blogs"
+msgstr "ブログ"
+
+msgid "Watch expert insights directly on our platform."
+msgstr "専門家の見解を当社のプラットフォームで直接ご覧ください。"
+
+msgid "Job Lists"
+msgstr "求人リスト"
+
+msgid "Read testimonials from industry leaders."
+msgstr "業界のリーダーたちの推薦文を読む。"
+
+msgid "🚀 From Job Seeker to Hired: Your Success Path 🚀"
+msgstr "🚀 求職者から内定獲得へ：成功への道 🚀"
+
+msgid "Understanding Your Needs"
+msgstr "あなたのニーズを理解する"
+
+msgid "We start by understanding your career goals, preferences, and job expectations."
+msgstr "私たちは、あなたのキャリア目標、希望、および仕事に対する期待を理解することから始めます。"
+
+msgid "Resume & Profile Optimization"
+msgstr "履歴書とプロフィールの最適化"
+
+msgid "We refine your resume and online presence to align with job requirements."
+msgstr "求人要件に合うように、履歴書やオンラインプロフィールを改善します。"
+
+msgid "Job Matching & Application"
+msgstr "仕事のマッチングと応募"
+
+msgid "We find the best job opportunities and assist with applications."
+msgstr "最適な仕事の機会を見つけ、応募をサポートします。"
+
+msgid "Interview Preparation"
+msgstr "面接対策"
+
+msgid "We provide mock interviews, common questions, and company-specific guidance."
+msgstr "模擬面接、よくある質問、企業別のアドバイスを提供します。"
+
+msgid "Offer & Negotiation"
+msgstr "オファーと交渉"
+
+msgid "We guide you in evaluating offers and negotiating salary and benefits."
+msgstr "オファーを評価し、給与や福利厚生の交渉をサポートします。"
+
+msgid "Onboarding & Career Growth"
+msgstr "入社後のサポートとキャリア成長"
+
+msgid "We support you even after getting hired to ensure a smooth transition."
+msgstr "採用後もスムーズに適応できるようサポートします。"
+
