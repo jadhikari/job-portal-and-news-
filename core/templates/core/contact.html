@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-5">
+            <h1 class="display-4 fw-bold">Contact Us</h1>
+            <p class="lead">
+                Whether you are looking for job opportunities or business partnerships, our team is ready to assist you.  
+                Get in touch with us today.
+            </p>
+
+            <h3 class="mt-4">Our Office</h3>
+            <ul class="list-unstyled">
+                <li><i class="bi bi-geo-alt-fill text-primary"></i> <strong>Address:</strong> Shinjuku I-land Tower, 6-5-1 Nishi-Shinjuku, Tokyo, Japan</li>
+                <li><i class="bi bi-telephone-fill text-success"></i> <strong>Phone:</strong> +81 3 3342 4506</li>
+                <li><i class="bi bi-envelope-fill text-danger"></i> <strong>Email:</strong> contact@enjapan.jp</li>
+                <li><i class="bi bi-globe text-info"></i> <strong>Website:</strong> <a href="https://www.enjapan.jp" target="_blank">www.enjapan.jp</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-lg-7">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Send Us a Message</h3>
+                    <form method="post" action="{% url 'contact' %}">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Your Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="text" class="form-control" id="phone" name="phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Your Address</label>
+                            <input type="text" class="form-control" id="address" name="address" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="purpose" class="form-label">Purpose of Contact</label>
+                            <select class="form-select" id="purpose" name="purpose" required>
+                                <option value="">Select Purpose</option>
+                                <option value="Job Inquiry">Looking for a Job</option>
+                                <option value="Business Inquiry">Business Partnership</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Google Map Section -->
+    <div class="row mt-5">
+        <div class="col">
+            <h3 class="text-center">Our Location</h3>
+            <div class="ratio ratio-16x9">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.4486077233546!2d139.6871977152591!3d35.69417848019015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cd38fd5cddd%3A0xe8b279f78671e74!2sShinjuku%20I-land%20Tower!5e0!3m2!1sen!2sjp!4v1648226720000" 
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

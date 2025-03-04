@@ -17,37 +17,38 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}">
+                    <a class="nav-link {% if request.path == '/' or request.path == '/ja/' or request.path == '/en/' or request.path == '/ne/'%}active{% endif %}" href="{% url 'home' %}">
                         <i class="bi bi-house-door"></i> {% trans "Home" %}
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if request.path == '/about/' %}active{% endif %}" href="#about">
+                    <a class="nav-link {% if '/about' in request.path %}active{% endif %}" href="{% url 'about' %}">
                         <i class="bi bi-info-circle"></i> {% trans "About" %}
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if request.path == '/news/' %}active{% endif %}" href="{% url 'news' %}">
+                    <a class="nav-link {% if '/news' in request.path %}active{% endif %}" href="{% url 'news' %}">
                         <i class="bi bi-newspaper"></i> {% trans "News" %}
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if request.path == '/career/' %}active{% endif %}" href="#career">
+                    <a class="nav-link {% if '/career' in request.path %}active{% endif %}" href="#career">
                         <i class="bi bi-briefcase"></i> {% trans "Career" %}
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if request.path == '/member/' %}active{% endif %}" href="#member">
+                    <a class="nav-link {% if '/member' in request.path %}active{% endif %}" href="#member">
                         <i class="bi bi-people"></i> {% trans "Members" %}
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if request.path == '/contact/' %}active{% endif %}" href="#contact">
+                    <a class="nav-link {% if '/contact' in request.path %}active{% endif %}" href="{% url 'contact' %}">
                         <i class="bi bi-envelope"></i> {% trans "Contact" %}
                     </a>
                 </li>
             </ul>
-
+        
+        
             <!-- Language Dropdown -->
             <form action="{% url 'set_language' %}" method="post" class="ms-3">
                 {% csrf_token %}

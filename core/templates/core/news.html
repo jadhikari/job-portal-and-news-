@@ -8,8 +8,66 @@
 {% endblock %}
 
 {% block content %}
-  {% for news in news_items %}
-    <h2>{{ news.header }}</h2>
-    <p>{{ news.content|safe }}</p> <!-- |safe is use to user html code as html -->
-  {% endfor %}
+<div class="container mt-4">
+    <!-- Main News Section -->
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card mb-4">
+                {% if top_news.image %}
+                    <img src="{{ top_news.image.url }}" class="card-img-top" alt="{{ top_news.get_translated_header }}"
+                    style="margin: 20px auto; max-width: 90%; "
+                    >
+                {% endif %}
+                <div class="card-body">
+                    <h2 class="card-title">{{ top_news.get_translated_header }}</h2>
+                    <p class="card-text">
+                        {% if LANGUAGE_CODE == "ja" %}
+                            {{ top_news.get_translated_content|truncatewords:10|safe }}
+                        {% else %}
+                            {{ top_news.get_translated_content|truncatewords:40|safe }}
+                        {% endif %}
+                    </p>
+                    <a href="{% url 'news_detail' top_news.unique_id %}" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sidebar: Trending News -->
+        <div class="col-md-4">
+            <h4>Trending News</h4>
+            <ul class="list-group">
+                {% for news in trending_news %}
+                <li class="list-group-item">
+                    <a href="{% url 'news_detail' news.unique_id %}">{{ news.get_translated_header }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Other News Grid -->
+    <div class="row mt-4">
+        {% for news in latest_news %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                {% if news.image %}
+                    <img src="{{ news.image.url }}" class="card-img-top" alt="{{ news.get_translated_header }}">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ news.get_translated_header }}</h5>
+                    <p class="card-text">
+                        {% if LANGUAGE_CODE == "ja" %}
+                            {{ news.get_translated_content|slice:":10"|safe }}
+                        {% else %}
+                            {{ news.get_translated_content|truncatewords:40|safe }}
+                        {% endif %}
+                    </p>
+                    <a href="{% url 'news_detail' news.unique_id %}" class="btn btn-secondary">Read More</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
 {% endblock %}

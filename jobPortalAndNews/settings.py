@@ -133,7 +133,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+#STATIC_URL = 'static/'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -163,3 +170,12 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Store session in the d
 LOCALE_PATHS = [
     BASE_DIR / "locale",  # Correctly use Path object for the locale directory
 ]
+
+# Mail sending configration 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Change this to your email provider
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'your-email@gmail.com'  # Change this to your email
+EMAIL_HOST_PASSWORD = 'your-email-password'  # Use an environment variable instead of hardcoding
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
