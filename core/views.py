@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, get_object_or_404
 from django.core.mail import send_mail
 from django.contrib import messages
 from . import models
@@ -28,34 +28,4 @@ def news_detail(request, unique_id):
     return render(request, 'core/news_detail.html', {'news': news})
 
 def contact(request):
-    if request.method == "POST":
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        phone = request.POST.get('phone')
-        address = request.POST.get('address')
-        purpose = request.POST.get('purpose')
-        message = request.POST.get('message')
-
-        # Compose email content
-        email_subject = f"New Contact Message from {name} ({purpose})"
-        email_body = f"""
-        Name: {name}
-        Email: {email}
-        Phone: {phone}
-        Address: {address}
-        Purpose: {purpose}
-        Message: {message}
-        """
-
-        # Send email (Replace with your actual email configuration)
-        send_mail(
-            subject=email_subject,
-            message=email_body,
-            from_email=email,
-            recipient_list=['contact@enjapan.jp'],  # Change this to your official email
-        )
-
-        messages.success(request, "Your message has been sent successfully!")
-        return redirect("contact")
-
-    return render(request, "core/contact.html")
+    return render(request, 'core/contact.html')

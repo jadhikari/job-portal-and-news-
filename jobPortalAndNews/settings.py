@@ -171,11 +171,3 @@ LOCALE_PATHS = [
     BASE_DIR / "locale",  # Correctly use Path object for the locale directory
 ]
 
-# Mail sending configration 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'  # Change this to your email provider
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'your-email@gmail.com'  # Change this to your email
-EMAIL_HOST_PASSWORD = 'your-email-password'  # Use an environment variable instead of hardcoding
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
