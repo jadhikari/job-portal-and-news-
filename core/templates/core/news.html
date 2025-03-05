@@ -15,7 +15,7 @@
             <div class="card mb-4">
                 {% if top_news.image %}
                     <img src="{{ top_news.image.url }}" class="card-img-top" alt="{{ top_news.get_translated_header }}"
-                    style="margin: 20px auto; max-width: 90%; "
+                    style="margin: 20px auto; height:400px; max-width:90%"
                     >
                 {% endif %}
                 <div class="card-body">
@@ -51,7 +51,8 @@
         <div class="col-md-4 mb-4">
             <div class="card">
                 {% if news.image %}
-                    <img src="{{ news.image.url }}" class="card-img-top" alt="{{ news.get_translated_header }}">
+                    <img src="{{ news.image.url }}" class="card-img-top" alt="{{ news.get_translated_header }}"
+                    style="margin: 20px auto; height:250px; max-width:90%">
                 {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{ news.get_translated_header }}</h5>
@@ -62,12 +63,45 @@
                             {{ news.get_translated_content|truncatewords:40|safe }}
                         {% endif %}
                     </p>
-                    <a href="{% url 'news_detail' news.unique_id %}" class="btn btn-secondary">Read More</a>
+                    <a href="{% url 'news_detail' news.unique_id %}" class="btn btn-primary btn-sm">Read More</a>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
+
+    <!-- Pagination Controls -->
+    <div class="d-flex justify-content-center mt-4">
+        <nav>
+            <ul class="pagination pagination-sm">
+                {% if latest_news.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page=1">&laquo; First</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ latest_news.previous_page_number }}">Previous</a>
+                    </li>
+                {% endif %}
+
+                <li class="page-item active">
+                    <span class="page-link">
+                        Page {{ latest_news.number }} of {{ latest_news.paginator.num_pages }}
+                    </span>
+                </li>
+
+                {% if latest_news.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ latest_news.next_page_number }}">Next</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ latest_news.paginator.num_pages }}">Last &raquo;</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+
+
 </div>
 
 {% endblock %}

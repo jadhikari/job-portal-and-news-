@@ -7,5 +7,6 @@ urlpatterns = [
     path('news/', views.news_home, name='news'),
     path('news/<str:unique_id>/', views.news_detail, name='news_detail'),
     path('contact/', views.contact, name='contact'),
+    path("team/", views.team_view, name="team"),
     
 ]

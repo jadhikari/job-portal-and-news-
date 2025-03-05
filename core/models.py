@@ -86,3 +86,46 @@ class Job(BaseModel):
 
     def __str__(self):
         return self.header_ja
+
+
+class TeamMember(BaseModel):
+    name_ja = models.CharField(max_length=100)
+    name_en = models.CharField(max_length=100)
+    name_ne = models.CharField(max_length=100)
+    position_ja = models.CharField(max_length=100)
+    position_en = models.CharField(max_length=100)
+    position_ne = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='team/', blank=True, null=True)
+    twitter = models.URLField(blank=True, null=True)
+    facebook = models.URLField(blank=True, null=True)
+    instagram = models.URLField(blank=True, null=True)
+    blog_ja = RichTextField(blank=True, null=True)
+    blog_en = RichTextField(blank=True, null=True)
+    blog_ne = RichTextField(blank=True, null=True)
+
+    def get_translated_name(self):
+        lang = get_language()
+        if lang == "ja":
+            return self.name_ja
+        elif lang == "ne":
+            return self.name_ne
+        return self.name_en if self.name_en else self.name_en  # Default to English
+
+    def get_translated_blog(self):
+        lang = get_language()
+        if lang == "ja":
+            return self.blog_ja
+        elif lang == "ne":
+            return self.blog_ne
+        return self.blog_en if self.blog_en else self.blog_en  # Default to English
+    
+    def get_translated_position(self):
+        lang = get_language()
+        if lang == "ja":
+            return self.position_ja
+        elif lang == "ne":
+            return self.position_ne
+        return self.position_en if self.position_en else self.position_en  # Default to English
+
+    def __str__(self):
+        return self.get_translated_name()

@@ -11,16 +11,18 @@
 {% block content %}
 <div class="container mt-4">
     <div class="row">
-        <div class="col-md-8 offset-md-2"> <!-- Centering the content -->
+        <div class="col-md-12"> <!-- Centering the content -->
             <div class="card p-3">
                 {% if news.image %}
-                    <img src="{{ news.image.url }}" style="width:50%" alt="{{ news.get_translated_header }}">
+                    <img src="{{ news.image.url }}" alt="{{ news.get_translated_header }}" 
+                    class="rounded mx-auto d-block" style="height:400px"
+                    >
                 {% endif %}
                 <div class="card-body text-center">
                     <h1 class="card-title">{{ news.get_translated_header }}</h1>
                     <p class="text-muted">Published on {{ news.created_at|date:"F d, Y" }}</p>
                     <hr>
-                    <div class="news-content text-left">
+                    <div class="news-content text-start">
                         {{ news.get_translated_content|safe }}
                     </div>
                     <div class="btn-container">

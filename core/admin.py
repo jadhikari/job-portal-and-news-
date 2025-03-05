@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import News, Blog, Video, Job
+from .models import News, Blog, Video, Job,TeamMember
 
 class BaseModelAdmin(admin.ModelAdmin):
     list_display = ('unique_id','header_ja', 'header_en', 'created_at', 'user')
@@ -29,3 +29,8 @@ class VideoAdmin(BaseModelAdmin):
 @admin.register(Job)
 class JobAdmin(BaseModelAdmin):
     pass
+
+@admin.register(TeamMember)
+class TeamMemberAdmin(BaseModelAdmin):
+    list_display = ('unique_id','name_en', 'name_ja', 'position_en', 'position_ja','created_at')
+    search_fields = ('unique_id','name_en')
