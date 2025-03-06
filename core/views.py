@@ -1,6 +1,6 @@
 
 from django.shortcuts import render, get_object_or_404
-from django.core.paginator import Paginator
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from . import models
 
 def home(request):
@@ -40,5 +40,29 @@ def team_view(request):
 
 def contact(request):
     return render(request, 'core/contact.html')
+
+def job_list_view(request):
+    job_list = models.Job.objects.all().order_by('-created_at')  # Retrieve all jobs, ordered by creation date
+    paginator = Paginator(job_list, 10)  # Display 10 jobs per page
+
+    page = request.GET.get('page', 1)
+    try:
+        jobs = paginator.page(page)
+    except PageNotAnInteger:
+        jobs = paginator.page(1)
+    except EmptyPage:
+        jobs = paginator.page(paginator.num_pages)
+
+    return render(request, 'core/job_list.html', {'jobs': jobs})
+
+def job_detail_view(request, unique_id):
+    # Retrieve the job object based on the unique_id
+    job = get_object_or_404(models.Job, unique_id=unique_id)
+    
+    
+    context = {
+        'job': job
+    }
+    return render(request, 'core/job_detail.html', context)
 
 

@@ -26,6 +26,26 @@ class BaseModel(models.Model):
             while ModelClass.objects.filter(unique_id=self.unique_id).exists():
                 self.unique_id = generate_random_id()
         super().save(*args, **kwargs)
+    
+    def get_translated_field(self, field_base_name):
+        lang = get_language()
+        field_name = f"{field_base_name}_{lang}"
+        # Attempt to get the field in the current language
+        if hasattr(self, field_name):
+            value = getattr(self, field_name)
+            if value:
+                return value
+        # Fallback to English if available
+        field_name_en = f"{field_base_name}_en"
+        if hasattr(self, field_name_en):
+            value = getattr(self, field_name_en)
+            if value:
+                return value
+        # Fallback to Japanese as the default
+        field_name_ja = f"{field_base_name}_ja"
+        if hasattr(self, field_name_ja):
+            return getattr(self, field_name_ja)
+        return None
 
 class News(BaseModel):
     image = models.ImageField(upload_to='news_images/', blank=True, null=True)
@@ -37,24 +57,14 @@ class News(BaseModel):
     content_ne = RichTextField(blank=True, null=True)
 
     def get_translated_header(self):
-        lang = get_language()
-        if lang == "ja":
-            return self.header_ja
-        elif lang == "ne":
-            return self.header_ne
-        return self.header_en if self.header_en else self.header_ja  # Default to English
-
+        return self.get_translated_field('header')
+    
     def get_translated_content(self):
-        lang = get_language()
-        if lang == "ja":
-            return self.content_ja
-        elif lang == "ne":
-            return self.content_ne
-        return self.content_en if self.content_en else self.content_ja  # Default to English
+        return self.get_translated_field('content')
 
     def __str__(self):
         return self.get_translated_header()
-
+    
 class Blog(BaseModel):
     image = models.ImageField(upload_to='blog_images/', blank=True, null=True)
     header_ja = models.CharField(max_length=255)
@@ -64,8 +74,14 @@ class Blog(BaseModel):
     content_en = RichTextField(blank=True, null=True)
     content_ne = RichTextField(blank=True, null=True)
 
+    def get_translated_header(self):
+        return self.get_translated_field('header')
+    
+    def get_translated_content(self):
+        return self.get_translated_field('content')
+
     def __str__(self):
-        return self.header_ja
+        return self.get_translated_header()
 
 class Video(BaseModel):
     header_ja = models.CharField(max_length=255)
@@ -73,19 +89,35 @@ class Video(BaseModel):
     header_ne = models.CharField(max_length=255, blank=True, null=True)
     link = models.URLField()
 
-    def __str__(self):
-        return self.header_ja
+    def get_translated_header(self):
+        return self.get_translated_field('header')
 
+    def __str__(self):
+        return self.get_translated_header()
+    
 class Job(BaseModel):
     header_ja = models.CharField(max_length=255)
     header_en = models.CharField(max_length=255, blank=True, null=True)
     header_ne = models.CharField(max_length=255, blank=True, null=True)
+    attract_point_ja = models.CharField(max_length=255)
+    attract_point_en = models.CharField(max_length=255, blank=True, null=True)
+    attract_point_ne = models.CharField(max_length=255, blank=True, null=True)
     content_ja = RichTextField()
     content_en = RichTextField(blank=True, null=True)
     content_ne = RichTextField(blank=True, null=True)
 
+    def get_translated_header(self):
+        return self.get_translated_field('header')
+
+    def get_translated_attract_point(self):
+        return self.get_translated_field('attract_point')
+
+    def get_translated_content(self):
+        return self.get_translated_field('content')
+
     def __str__(self):
-        return self.header_ja
+        return self.get_translated_header()
+
 
 
 class TeamMember(BaseModel):
@@ -103,29 +135,14 @@ class TeamMember(BaseModel):
     blog_en = RichTextField(blank=True, null=True)
     blog_ne = RichTextField(blank=True, null=True)
 
-    def get_translated_name(self):
-        lang = get_language()
-        if lang == "ja":
-            return self.name_ja
-        elif lang == "ne":
-            return self.name_ne
-        return self.name_en if self.name_en else self.name_en  # Default to English
-
-    def get_translated_blog(self):
-        lang = get_language()
-        if lang == "ja":
-            return self.blog_ja
-        elif lang == "ne":
-            return self.blog_ne
-        return self.blog_en if self.blog_en else self.blog_en  # Default to English
+    def get_translated_header(self):
+        return self.get_translated_field('name')
     
     def get_translated_position(self):
-        lang = get_language()
-        if lang == "ja":
-            return self.position_ja
-        elif lang == "ne":
-            return self.position_ne
-        return self.position_en if self.position_en else self.position_en  # Default to English
+        return self.get_translated_field('position')
+    
+    def get_translated_content(self):
+        return self.get_translated_field('blog')
 
     def __str__(self):
-        return self.get_translated_name()
+        return self.get_translated_header()

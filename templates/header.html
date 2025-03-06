@@ -32,7 +32,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if '/career' in request.path %}active{% endif %}" href="#career">
+                    <a class="nav-link {% if '/career' in request.path %}active{% endif %}" href="{% url 'career' %}">
                         <i class="bi bi-briefcase"></i> {% trans "Career" %}
                     </a>
                 </li>
