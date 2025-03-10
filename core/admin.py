@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import News, Blog, Video, Job,TeamMember
+from .models import News, Blog, Video, Job,TeamMember, CompanyInfo
 
 class BaseModelAdmin(admin.ModelAdmin):
     list_display = ('unique_id','header_ja', 'header_en', 'created_at', 'user')
@@ -34,3 +34,9 @@ class JobAdmin(BaseModelAdmin):
 class TeamMemberAdmin(BaseModelAdmin):
     list_display = ('unique_id','name_en', 'name_ja', 'position_en', 'position_ja','created_at')
     search_fields = ('unique_id','name_en')
+
+@admin.register(CompanyInfo)
+class CompanyInfoAdmin(BaseModelAdmin):
+    list_display = ('unique_id','name_en','establishment_date', 'representative_en', 'stock_listing_en', 'office_tel','created_at')
+    # Exclude fields from the admin form
+    exclude = ("office_tel", "office_fax")

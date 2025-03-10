@@ -4,6 +4,8 @@ from django.db import models
 from django.conf import settings
 from ckeditor.fields import RichTextField
 from django.utils.translation import get_language
+from django.core.exceptions import ValidationError
+
 
 def generate_random_id():
     """Generates a random 6-character alphanumeric string."""
@@ -135,14 +137,85 @@ class TeamMember(BaseModel):
     blog_en = RichTextField(blank=True, null=True)
     blog_ne = RichTextField(blank=True, null=True)
 
-    def get_translated_header(self):
+    def get_translated_name(self):
         return self.get_translated_field('name')
     
     def get_translated_position(self):
         return self.get_translated_field('position')
     
-    def get_translated_content(self):
+    def get_translated_blog(self):
         return self.get_translated_field('blog')
 
     def __str__(self):
-        return self.get_translated_header()
+        return self.get_translated_name()
+
+class CompanyInfo(BaseModel):
+    name_en = models.CharField(max_length=255)
+    name_ja = models.CharField(max_length=255)
+    name_ne = models.CharField(max_length=255)
+    establishment_date = models.DateField()
+    representative_en = models.CharField(max_length=255)
+    representative_ja = models.CharField(max_length=255)
+    representative_ne = models.CharField(max_length=255)
+    total_equity_en = models.CharField(max_length=255)
+    total_equity_ja = models.CharField(max_length=255, blank=True, null=True)
+    total_equity_ne = models.CharField(max_length=255, blank=True, null=True)
+    stock_listing_en = models.CharField(max_length=255)
+    stock_listing_ja = models.CharField(max_length=255)
+    stock_listing_ne = models.CharField(max_length=255)
+    employees_consolidated = models.PositiveIntegerField()
+    employees_non_consolidated = models.PositiveIntegerField()
+    business_portfolio_en = RichTextField()
+    business_portfolio_ja = RichTextField()
+    business_portfolio_ne = RichTextField()
+    office_address_en = RichTextField()
+    office_address_ja = RichTextField()
+    office_address_ne = RichTextField()
+    office_tel = models.CharField(max_length=20, blank=True, null=True)
+    office_fax = models.CharField(max_length=20, blank=True, null=True)
+    other_offices_en = models.TextField()
+    other_offices_ja = models.TextField()
+    other_offices_ne = models.TextField()
+    about_en = RichTextField(blank=True, null=True)
+    about_ja = RichTextField(blank=True, null=True)
+    about_ne = RichTextField(blank=True, null=True)
+    mission_en = RichTextField(blank=True, null=True)
+    mission_ja = RichTextField(blank=True, null=True)
+    mission_ne = RichTextField(blank=True, null=True)
+    
+    
+    def save(self, *args, **kwargs):
+        if CompanyInfo.objects.exists() and not self.pk:
+            raise ValidationError("Only one instance of CompanyInfo is allowed.")
+        super().save(*args, **kwargs)
+    
+    def get_translated_name(self):
+        return self.get_translated_field('name')
+
+    def get_translated_representative(self):
+        return self.get_translated_field('representative')
+
+    def get_translated_stock_listing(self):
+        return self.get_translated_field('stock_listing')
+    
+    def get_translated_business_portfolio(self):
+        return self.get_translated_field('business_portfolio')
+
+    def get_translated_office_address(self):
+        return self.get_translated_field('office_address')
+
+    def get_translated_other_offices(self):
+        return self.get_translated_field('other_offices')
+    def get_translated_about(self):
+        return self.get_translated_field('about')
+
+    def get_translated_mission(self):
+        return self.get_translated_field('mission')
+    
+    def get_translated_total_equity(self):
+        return self.get_translated_field('total_equity')
+
+
+
+    def __str__(self):
+        return self.get_translated_name()

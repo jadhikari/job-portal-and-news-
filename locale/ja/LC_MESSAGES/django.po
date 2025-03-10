@@ -122,3 +122,194 @@ msgstr "入社後のサポートとキャリア成長"
 msgid "We support you even after getting hired to ensure a smooth transition."
 msgstr "採用後もスムーズに適応できるようサポートします。"
 
+msgid "About Us"
+msgstr "私たちについて"
+
+msgid "Company Information"
+msgstr "会社情報"
+
+msgid "Company Name"
+msgstr "会社名"
+
+msgid "Establishment"
+msgstr "設立"
+
+msgid "Representatives"
+msgstr "代表者"
+
+msgid "Total Stockholder's Equity"
+msgstr "総株主資本"
+
+msgid "Stock Listing"
+msgstr "株式上場"
+
+msgid "Number of Employees Consolidated"
+msgstr "従業員数（連結）"
+
+msgid "Tokyo Office"
+msgstr "東京オフィス"
+
+msgid "Other Offices"
+msgstr "その他のオフィス"
+
+msgid "Reliable News"
+msgstr "信頼できるニュース"
+
+msgid "news_related"
+msgstr "最新のビジネスおよびキャリアのトレンドに関する正確で綿密に調査されたニュースで常に最新情報を入手してください。"
+
+msgid "Career Insights"
+msgstr "キャリアインサイト"
+
+msgid "career_related"
+msgstr "私たちは、専門家の意見、ヒント、およびガイダンスを提供し、プロフェッショナルがキャリアで成功するのを支援します。"
+
+msgid "Community Engagement"
+msgstr "コミュニティ参加"
+
+msgid "community_related"
+msgstr "仕事とニュースの未来を形作るプロフェッショナルや思想的リーダーのネットワークに参加してください。"
+
+msgid "Our Mission"
+msgstr "私たちの使命"
+
+msgid "Consolidated"
+msgstr "連結"
+
+msgid "Non-Consolidated"
+msgstr "単体"
+
+msgid "Trending News"
+msgstr "トレンドニュース"
+
+msgid "Read More"
+msgstr "続きを読む"
+
+msgid "First"
+msgstr "最初"
+
+msgid "Previous"
+msgstr "前へ"
+
+msgid "Next"
+msgstr "次へ"
+
+msgid "Last"
+msgstr "最後"
+
+msgid "Back to News"
+msgstr "ニュースに戻る"
+
+msgid "Available Job Positions"
+msgstr "募集職種一覧"
+
+msgid "Explore the opportunities to join our dynamic team."
+msgstr "私たちの活気あるチームに参加する機会を探してみましょう。"
+
+msgid "Search by Job Title"
+msgstr "職種で検索"
+
+msgid "No jobs found."
+msgstr "求人が見つかりませんでした。"
+
+msgid "View Details"
+msgstr "詳細を見る"
+
+msgid "Posted on"
+msgstr "掲載日"
+
+msgid "Job Details"
+msgstr "求人詳細"
+
+msgid "Posted On:"
+msgstr "掲載日："
+
+msgid "Last Updated:"
+msgstr "最終更新日："
+
+msgid "Apply Now"
+msgstr "今すぐ応募"
+
+msgid "Back to job list"
+msgstr "求人一覧に戻る"
+
+msgid "Our Team"
+msgstr "私たちのチーム"
+
+msgid "Meet Our Team Members"
+msgstr "チームメンバーの紹介"
+
+msgid "Our team of highly skilled professionals brings years of experience across various industries, ensuring top-notch support tailored to your unique needs."
+msgstr "当社の優秀な専門家チームは、さまざまな業界での豊富な経験を活かし、お客様のニーズに合わせた最高のサポートを提供します。"
+
+msgid "Request a Consultation"
+msgstr "ご相談はこちら"
+
+msgid "Our Amazing Team"
+msgstr "素晴らしいチーム"
+
+msgid "Dedicated professionals behind our success."
+msgstr "私たちの成功を支える献身的な専門家たち。"
+
+msgid "Close"
+msgstr "閉じる"
+
+msgid "Contact Us"
+msgstr "お問い合わせ"
+
+msgid "Whether you are looking for job opportunities or business partnerships, our team is ready to assist you. Get in touch with us today."
+msgstr "求人情報やビジネスパートナーシップをお探しの場合でも、当社のチームがサポートいたします。お気軽にお問い合わせください。"
+
+msgid "Our Office"
+msgstr "当社オフィス"
+
+msgid "Address"
+msgstr "住所"
+
+msgid "Phone"
+msgstr "電話"
+
+msgid "Email"
+msgstr "メール"
+
+msgid "Website"
+msgstr "ウェブサイト"
+
+msgid "Send Us a Message"
+msgstr "メッセージを送る"
+
+msgid "Your Name"
+msgstr "お名前"
+
+msgid "Your Email"
+msgstr "メールアドレス"
+
+msgid "Phone Number"
+msgstr "電話番号"
+
+msgid "Your Address"
+msgstr "ご住所"
+
+msgid "Purpose of Contact"
+msgstr "お問い合わせの目的"
+
+msgid "Select Purpose"
+msgstr "目的を選択"
+
+msgid "Looking for a Job"
+msgstr "求人を探している"
+
+msgid "Business Partnership"
+msgstr "ビジネスパートナーシップ"
+
+msgid "General Inquiry"
+msgstr "一般的なお問い合せ"
+
+msgid "Your Message"
+msgstr "メッセージ内容"
+
+msgid "Send Message"
+msgstr "送信"
+
+msgid "Our Location"
+msgstr "所在地"

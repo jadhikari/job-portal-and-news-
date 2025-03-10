@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% load static %}
 {% block title %}{{ news.get_translated_header }} | Work News Platform{% endblock %}
 
@@ -26,7 +27,7 @@
                         {{ news.get_translated_content|safe }}
                     </div>
                     <div class="btn-container">
-                        <a href="{% url 'news' %}" class="btn btn-primary mx-2">Back to News</a>
+                        <a href="{% url 'news' %}" class="btn btn-sm btn-primary mx-2">{% trans "Back to News" %}</a>
                     </div>
                 </div>
             </div>
